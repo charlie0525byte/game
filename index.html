@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>俄罗斯方块</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f0f2f5;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+
+        .game-container {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        #gameCanvas {
+            border: 2px solid #333;
+            background: #000;
+        }
+
+        .info-panel {
+            padding: 20px;
+            background: #f8f8f8;
+            border-radius: 8px;
+            min-width: 200px;
+        }
+
+        .controls {
+            margin-top: 20px;
+        }
+
+        button {
+            width: 100%;
+            padding: 8px 16px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 4px;
+            background: #1890ff;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #40a9ff;
+        }
+
+        .score {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        .next-piece {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #nextCanvas {
+            border: 1px solid #ccc;
+            background: #000;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>俄罗斯方块</h1>
+    <div class="game-container">
+        <canvas id="gameCanvas" width="300" height="600"></canvas>
+        <div class="info-panel">
+            <div class="score">分数: <span id="score">0</span></div>
+            <div class="next-piece">
+                <div>下一个方块:</div>
+                <canvas id="nextCanvas" width="100" height="100"></canvas>
+            </div>
+            <div class="controls">
+                <button id="startBtn">开始游戏</button>
+                <button id="pauseBtn">暂停</button>
+            </div>
+            <div style="margin-top: 20px;">
+                <p>操作说明:</p>
+                <p>← →: 左右移动</p>
+                <p>↑: 旋转</p>
+                <p>↓: 加速下落</p>
+                <p>空格: 直接落下</p>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
